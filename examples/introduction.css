@@ -1,0 +1,92 @@
+h3{
+    color: blue;
+}
+h1{
+    color: beige;
+}
+
+footer{
+    font-size: 8px;
+    color: aqua;
+    font-weight: 300;
+}
+
+#footer{
+    font-size: 16px;
+}
+
+.footer-container{
+    color: brown;
+}
+.descendant-selector  #paragraph{
+    color :blueviolet
+}
+
+
+.box-model{
+    padding: 16px 8px 4px 2px;
+    /* padding: auto; */
+    /* border-top: 18px solid lightgray; */
+    border: 18px;
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 16px;
+    /* border-bottom-left-radius: 50px; */
+    margin-top: 16px;
+    background-color: lightblue;
+}
+
+.flex-example-row{
+    background-color: lightcyan;
+    display: flex;
+    padding: 16px;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.box-one{
+    padding: 16px;
+    width: 25%;
+    background: lightsalmon;
+}
+
+.box-two{
+    padding: 16px;
+    width: 25%;
+    background: lightgreen;
+}
+
+.box-three{
+    padding: 16px;
+    width: 25%;
+    background: lightcoral;
+}
+
+.flex-example-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 50px;
+    height: 200px;
+    background-color: lightslategrey
+}
+.input-example{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
+.styled-input{
+    font-size: 18px;
+    line-height: 24px;
+    height: 24px;
+}
+
+input[name="firstname"]{
+    color: red;
+}

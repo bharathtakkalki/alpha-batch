@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Introduction</title>
+    <link rel="stylesheet" href="./introduction.css"/>
+    <style>
+        h2{
+            color:blue;
+        }
+
+        .header-two{
+            color: green;
+        }
+
+        #heading-two{
+            color:red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <header class="header-container">
+        <h1 class="heading-one">Header 1</h1>
+        <h2 >Showing Color of Tag css</h2>
+        <h2 class="header-two">Showing Color of Class css</h2>
+        <h2 id="heading-two" class="header-two">Showing Color of ID css</h2>
+        <h2 id="heading-two" class="header-two" style="color:beige;">Showing Color of Inline Style css</h2>
+        <h3>Header 3</h3>
+        <h4>Header 4</h4>
+        <h5>Header 5</h5>
+        <h6>Header 5</h6>
+        <p> Subject: HTML/CSS</p>
+    </header>
+    <div id="inline-example">
+        <p class="paragraph-" >This paragraph<p> outside descendant-selector <strong>Inline Element</strong></p></p>
+    </div>
+    <div>
+       <span>This paragraph</span>
+       <span>
+            <strong>Inline Element</strong>
+       </span>
+    </div>
+    <div class="descendant-selector" >
+        <p id="paragraph">This paragraph within descendant-selector <span>Inline Element</span></p>
+    </div>
+    <div class="list-container">
+        <h4> Listing tags </h4>
+        <ul>
+            <li> HTML </li>
+            <li> CSS </li>
+            <li> Javascript </li>
+            <li> React </li>
+        </ul>
+        <ol type="a" >
+            <li><a href="./node.html" >NodeJS</a></li>
+            <li><a href="https://expressjs.com/" >Express</a></li>
+            <li>MongoDB</li>
+            <li>SQL</li>
+        </ol>
+    </div>
+    <div >
+         <img src="https://picsum.photos/200/300" alt="server-image" />
+        <img src="test.jpeg" alt="local-image"/>
+        <input />
+    </div> -->
+    <!--  This element is an example of box-model design of a HTML element -->
+    <!-- <div class="box-model-example">
+        <div class="box-model">
+            content Area
+        </div>
+    </div>  -->
+    <!-- This element is an example of flex properties -->
+    <!-- <div class="flex-example-row">
+        <div class="box-one">
+            Box One
+        </div>
+        <div class="box-two">
+            Box Two
+        </div>
+        <div class="box-three">
+            Box Three
+        </div>
+    </div>
+    <div class="flex-example-column">
+        <span class="box-one" >
+            Box One
+        </span>
+        <span class="box-two" >
+            Box Two
+        </span>
+        <span class="box-three" >
+            Box Three
+        </span>
+
+    </div> -->
+    <div class="input-example">
+        <div onclick="clickMeHandler()" > Click me As Well!! </div>
+        <div >
+            <label  for="firstname">First Name:</label>
+            <input id="firstname" placeholder="First name" required class="styled-input" name="firstname" type="text" />
+        </div>
+        <label for="password">Password</label>
+        <input placeholder="Password" type="password" name="password"/>
+        <label for="gender">Gender</label>
+        <input type="checkbox" name="gender"/>
+        <label>Male</label>
+        <input type="checkbox" name="gender"/>
+        <label>Female</label>
+        <input type="radio"/>
+        <label>Sign me Up! </label>
+        <div class="example-button">
+            <button onclick="clickMeHandler()">Click Me!</button>
+        </div>
+    </div>
+    <!-- <footer id="footer" class="container main-page-footer">
+        <div>
+            <h2 class="header-two">This is our footer</h2>
+        </div>
+        <aside>
+            This is in our Aside
+        </aside>
+    </footer> -->
+    <script>
+        const clickMeHandler = () => {
+            console.log(" Im in the handler execution")
+            window.alert("User Clicked Me")        }
+    </script>
+</body>
+
+</html>
