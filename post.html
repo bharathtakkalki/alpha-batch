@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./post.css" />
-    <link rel="stylesheet" href="./font-awesome-4.7.0 2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./modal.css" />
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0 2/css/font-awesome.min.css"
+    />
     <title>Post</title>
   </head>
   <body>
@@ -16,7 +20,9 @@
       </div>
       <div class="action-container">
         <button class="login-buttons">Sign In</button>
-        <button class="login-buttons">Sign Up</button>
+        <button onclick="signUpClickHandler()" class="login-buttons">
+          Sign Up
+        </button>
       </div>
     </header>
     <div class="main-container">
@@ -105,5 +111,46 @@
         </div>
       </div>
     </div>
+    <div id="sign-up-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="heading">Get Started!</h3>
+          <span onclick="closeClickHandler()">
+            <i class="fa fa-times close" aria-hidden="true"></i>
+          </span>
+        </div>
+        <form>
+          <div class="input-container">
+            <label class="label"> Full name </label>
+            <input class="form-input" type="text" placeholder="Enter full name" type="text" />
+          </div>
+          <div class="input-container">
+            <label class="label"> Username </label>
+            <input class="form-input" type="text" placeholder="Enter username" type="text" />
+          </div>
+          <div class="input-container">
+            <label class="label"> Password </label>
+            <input class="form-input" type="password" placeholder="Enter password" type="text" />
+          </div>
+          <div class="input-container">
+            <label class="label"> Confirm Password </label>
+            <input class="form-input" type="password" placeholder="Enter confirm password" type="text" />
+          </div>
+        </form>
+        <div class="action-container">
+            <button class="primary"> Sign Up!</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const signUpClickHandler = () => {
+        const modal = document.getElementById("sign-up-modal");
+        modal.style.display = "flex";
+      };
+      const closeClickHandler = () =>{
+        const modal = document.getElementById("sign-up-modal");
+        modal.style.display = "";
+      }
+    </script>
   </body>
 </html>
