@@ -47,8 +47,16 @@
     padding: 16px;
     color: white;
     border: none;
-    
+    cursor: pointer;
     background-color: rgb(91, 183, 98);
+}
+
+.primary:hover{
+    background-color: rgb(91, 183, 98,0.4);
+}
+
+.primary:focus{
+    outline: none;
 }
 .action-container{
     margin: 16px;
