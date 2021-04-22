@@ -3,7 +3,7 @@ header{
     justify-content: space-between;
 }
 
-.login-buttons{
+.primary-button{
     background: #007580;
     padding: 8px;
     color: white;
@@ -61,4 +61,11 @@ body{
 
 .trash-icon:hover{
     color: red;
+}
+
+.post-action-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
 }

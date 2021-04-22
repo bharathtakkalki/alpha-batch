@@ -20,12 +20,18 @@
         <h4>Explore,imagine,create</h4>
       </div>
       <div class="action-container">
-        <button class="login-buttons">Sign In</button>
-        <button onclick="signUpClickHandler()" class="login-buttons">
+        <button class="primary-button">Sign In</button>
+        <button onclick="signUpClickHandler()" class="primary-button">
           Sign Up
         </button>
       </div>
     </header>
+    <div class="post-action-container">
+      <button class="primary-button" style="margin-right: 16px;" onclick="getAllDataClickHandler()">Get All Posts</button>
+      <button class="primary-button" style="margin-right: 16px;">Add Post</button>
+      <button class="primary-button" onclick="undoClickHandler()">Undo Delete</button>
+
+    </div>  
     <div class="main-container">
       <!-- <div class="card">
         <div class="author-container">

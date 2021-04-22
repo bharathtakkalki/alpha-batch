@@ -31,10 +31,13 @@ const postData = [
     },
 
 ]
+let postDataState;
+let lastDeleted = [];
 
-const addPostContent = () => {
+
+const addPostContent = (data=postData) => {
     const postContainer = document.getElementsByClassName("main-container")[0]
-    postData.forEach((post, index) => {
+    data.forEach((post, index) => {
         const { title,author,summary} = post // Object destructuring
         const cardDiv = document.createElement("div")
         cardDiv.className = "card"
@@ -44,9 +47,44 @@ const addPostContent = () => {
                             <div class="post-container">
                                 <h3>${title} ${index + 1}</h3>
                                 <p>${summary}</p>
-                                <i class="fa fa-trash trash-icon" aria-hidden="true"></i>
+                                <i class="fa fa-trash trash-icon" aria-hidden="true" onclick="deleteClickHandler(${index})" ></i>
                                 <i class="fa fa-ellipsis-h elipsis-icon" aria-hidden="true"></i>
                             </div>`
         postContainer.appendChild(cardDiv)
     })
+    postDataState = data
 }
+
+const removeAllElements = (className) =>{
+    const element = document.getElementsByClassName(className)[0]
+    element.innerHTML = ""
+}
+
+const deleteClickHandler = (index) =>{
+    lastDeleted.push(postDataState.filter((item,i)=> i === index))
+    const newPostData = postDataState.filter((item,i) => i !== index)
+    removeAllElements("main-container")
+    addPostContent(newPostData)
+}
+
+const getAllDataClickHandler = () =>{
+    removeAllElements("main-container")
+    addPostContent()
+}
+
+const undoClickHandler = () =>{
+    if(lastDeleted.length === 0) return;
+    const newPostData = [...postDataState]
+    newPostData.push(lastDeleted.pop()[0])
+    removeAllElements("main-container")
+    addPostContent(newPostData)
+}
+
+
+// Assignment - Add Post 
+/*
+Step1: Create Click handler for the add post button 
+Step2: Add Modal for the Create Post 
+Step3: In the modal need Three fields for #Title #Author #Summary & Save Post - button
+Step4: Create click handler for Save Post - Button , Which renders the new post on the Screen
+ */
