@@ -52,3 +52,23 @@ function copyText(){
 }
 
 
+const parentDivClickHandler = () =>{
+    console.log("Im Parent Div")
+}
+const childDivClickHandler = (event,a,b,c) =>{
+    event.stopPropagation()
+    console.log(a,b,c)
+    console.log("Im Child Div")
+}
+const pTagClickHandler = (event) =>{
+    // event.stopPropagation()
+    console.log("Im P Tag ")
+}
+const buttonClickHandler = (event) =>{
+    // event.stopPropagation()
+    console.log(event)
+    console.log("Im Button")
+}
+
+
+

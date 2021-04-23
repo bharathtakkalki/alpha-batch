@@ -81,10 +81,45 @@ const undoClickHandler = () =>{
 }
 
 
+const addPostClickHandler = () =>{
+    const createModal = document.getElementById("create-post-modal")
+    createModal.style.display = "flex"
+}
+const closeCreatePostClickHandler = () =>{
+    const createModal = document.getElementById("create-post-modal")
+    createModal.style.display = ""
+}
+
+const getValueFromElement = (id) =>{
+    return document.getElementById(id).value
+}
+const clearFieldsUsingIds = (ids) =>{
+    ids.forEach(id =>{
+        document.getElementById(id).value = ""
+    })
+}
+
+const createPostSubmitHandler = (event) =>{
+    event.preventDefault()
+    const title = getValueFromElement("title")
+    const author = getValueFromElement("author")
+    const summary = getValueFromElement("summary")
+    const newPostData = [...postDataState]
+    newPostData.push({title,author,summary})
+    removeAllElements("main-container")
+    addPostContent(newPostData)
+    clearFieldsUsingIds(["title","author","summary"])
+    closeCreatePostClickHandler()
+}
+
+
 // Assignment - Add Post 
 /*
 Step1: Create Click handler for the add post button 
 Step2: Add Modal for the Create Post 
 Step3: In the modal need Three fields for #Title #Author #Summary & Save Post - button
 Step4: Create click handler for Save Post - Button , Which renders the new post on the Screen
- */
+*/
+
+
+// Session Storage-2mb  , localstorage-5mb // Cookies-5kb 

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="dom.js" type="text/javascript" ></script>
+    <link rel="stylesheet" href="./dom.css"/>
     <title>DOM Manipulation</title>
 </head>
 <body>
@@ -18,5 +19,12 @@
     <button onclick="printWindowObject()">Print Window Object</button>
     <button onclick="openAlertBox()">Open Alert</button>
     <button onclick="copyText()">Copy Text</button>
+    <div class="event-bubbling-example" onclick="parentDivClickHandler()">
+        <div class="first-div" onclick="childDivClickHandler(event,'data','name',100)">
+            <p class="inner-p-tag" onclick="pTagClickHandler(event)">
+                <button onclick="buttonClickHandler(event)">Click Me!</button>
+            </p>
+        </div>
+    </div>
 </body>
 </html>
