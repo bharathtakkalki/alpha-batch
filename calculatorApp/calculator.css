@@ -1,0 +1,101 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; 
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+
+.calc-container{
+    /* background: #21252c; */
+    background: #151515;
+    height: 60%;
+    width: 20%;
+    min-height: 667px;
+    min-width: 375px;
+    border-radius: 24px;
+    overflow: hidden;
+}
+.display{
+    height: 40%;
+    /* background-color: aqua; */
+}
+.keypad-container{
+    height: 60%;
+    /* background-color: #292e36; */
+    background-color:#301b3f;
+    /* background-color: gray; */
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding: 16px;
+}
+.color{
+    color: #b4a5a5;
+}
+.switch-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+}
+.switch{
+    padding: 8px 12px;
+    border-radius: 16px;
+    background-color:#301b3f;
+}
+
+.icon-size{
+    padding: 8px;
+    font-size: 24px;
+}
+
+.not-selected{
+    color: #7a6868;
+}
+.output{
+    color: #b4a5a5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 80%;
+    margin-right: 16px;
+}
+.result{
+    font-size: 64px;
+}
+.operand{
+    color: #e77474;
+}
+.operation{
+    font-size: 36px;
+}
+.keypad{
+    width: 100%;
+}
+tr{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+td{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.key{
+    width:50px;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #151515;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+}
+.action-keys{
+    color:#2aedc9;
+}
