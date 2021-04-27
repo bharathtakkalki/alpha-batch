@@ -29,6 +29,8 @@ body{
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
     padding: 16px;
+    display: flex;
+    justify-content: center;
 }
 .color{
     color: #b4a5a5;
@@ -73,17 +75,17 @@ body{
 }
 .keypad{
     width: 100%;
+    border-spacing: 16px;
 }
-tr{
+/* tr{
     display: flex;
     width: 100%;
     justify-content: space-around;
-}
-td{
+}*/
+/* td{
     display: flex;
-    align-items: center;
     justify-content: center;
-}
+} */
 .key{
     width:50px;
     height:50px;
@@ -98,4 +100,10 @@ td{
 }
 .action-keys{
     color:#2aedc9;
+}
+.num-keys{
+    color: #b4a5a5;
+}
+.flip-180{
+    transform: rotateY(180deg);
 }
