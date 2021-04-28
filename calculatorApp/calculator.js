@@ -1,32 +1,35 @@
 class Calculator{
     constructor(){
-        this.numOne = ""
-        this.numTwo = ""
+        this.numArr = []
+        this.currentNum = ""
         this.result = ""
         this.prevResult = ""
-        this.operation = ""
+        this.operation = []
     }
-    add(){
-        this.result = Number(this.numOne) + Number(this.numTwo)
+    add(numOne,numTwo){
+        return Number(numOne) + Number(numTwo)
     }
-    subtract(){
-        this.result =  Number(this.numOne) -  Number(this.numTwo)
+    subtract(numOne,numTwo){
+        return Number(numOne) -  Number(numTwo)
     }
-    setNumOne(value){
-        this.numOne += value
+    setCurrentNum(value){
+        this.currentNum += value
     }
-    setNumTwo(value){
-        this.numTwo += value
+    clearCurrentNum(){
+        this.numArr.push(this.currentNum) 
+        this.currentNum = ""
     }
     setOperation(operation){
-        this.operation = operation
+        this.operation.push(operation)
+        this.numArr.push(this.currentNum)
+        this.currentNum = ""
     }
     clearCalculator(){
-        this.numOne = ""
-        this.numTwo = ""
+        this.numArr = []
+        this.currentNum = ""
         this.result = ""
         this.prevResult = ""
-        this.operation = ""
+        this.operation = []
     }
     changeSign(forNumOne){
         if(forNumOne){
@@ -61,20 +64,24 @@ const calculator = new Calculator()
 
 const updateMainDisplay = () =>{
     const main = document.getElementById("main-display")
-    main.innerText =  calculator.operation ? (calculator.numTwo || 0) : (calculator.numOne || 0)
+    main.innerText =  calculator.currentNum || 0
    
 }
 
 const updateSecondaryDisplay = () =>{
     const secondary = document.getElementById("secondary-display")
-    secondary.innerHTML = ` ${calculator.numOne} <span class="operand">${SignObject[calculator.operation] ? SignObject[calculator.operation] : ""}</span> ${calculator.numTwo}`
+    const newNumArr = [...calculator.numArr]
+    const newOperation = [...calculator.operation]
+    let innerHTML = ""
+    while(newNumArr.length !== 0){
+        const num = newNumArr.shift()
+        const operation = newOperation.shift()
+        innerHTML += `${num} <span class="operand">${SignObject[operation] ? SignObject[operation] : ""}</span>`
+    }
+    secondary.innerHTML = innerHTML
 } 
 const numKeyClickHandler = (num) =>{
-    if(calculator.operation){  
-        calculator.setNumTwo(num)
-    }else{
-        calculator.setNumOne(num)
-    }
+    calculator.setCurrentNum(num)
     updateMainDisplay()
     updateSecondaryDisplay()
 }
@@ -86,18 +93,29 @@ const operandKeyClickHandler = (operation) =>{
 }
 
 const resultClickHandler = () =>{
-    switch (calculator.operation) {
-        case "ADD":
-            calculator.add()
-            break;
-        case "SUBTRACT":
-            calculator.subtract()
-            break;
-        default:
-            break;
+    calculator.clearCurrentNum()
+    const newNumArr = [...calculator.numArr]
+    const newOperation = [...calculator.operation]
+    // TODO: Move logic to class as result method
+    while(newNumArr.length !== 1){
+        const numOne = newNumArr.shift()
+        const numTwo = newNumArr.shift()
+        const operation = newOperation.shift()
+
+        switch (operation) {
+            case "ADD":
+                newNumArr.unshift(calculator.add(numOne,numTwo))
+                break;
+            case "SUBTRACT":
+                newNumArr.unshift(calculator.subtract(numOne,numTwo))
+                break;
+            default:
+                break;
+        }
     }
+    updateSecondaryDisplay()
     const main = document.getElementById("main-display")
-    main.innerText = calculator.result
+    main.innerText = newNumArr[0]
 }
 
 const actionKeyClickHandler = (action) => {
