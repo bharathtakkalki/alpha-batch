@@ -45,8 +45,8 @@
         <table class="keypad">
           <tbody>
             <tr>
-              <td><div class="key action-keys" onclick="actionKeyClickHandler()">AC</div></td>
-              <td><div class="key action-keys" onclick="actionKeyClickHandler()">+/-</div></td>
+              <td><div class="key action-keys" onclick="actionKeyClickHandler('CLEAR_ALL')">AC</div></td>
+              <td><div class="key action-keys" onclick="actionKeyClickHandler('CHANGE_SIGN')">+/-</div></td>
               <td><div class="key action-keys" onclick="operandKeyClickHandler()">%</div></td>
               <td><div class="key operand" onclick="operandKeyClickHandler('DIVIDE')">÷</div></td>
             </tr>
@@ -71,7 +71,7 @@
               <tr>  
                 <td><div class="key num-keys" onclick="undoClickHandler()" ><i class="fa fa-repeat flip-180" aria-hidden="true"></i></div></td>
                 <td><div class="key num-keys" onclick="numKeyClickHandler(0)">0</div></td>
-                <td><div class="key num-keys" onclick="actionKeyClickHandler()">.</div></td>
+                <td><div class="key num-keys" onclick="numKeyClickHandler('.')">.</div></td>
                 <td><div class="key operand" onclick="resultClickHandler()">=</div></td>
               </tr>
           </tbody>
