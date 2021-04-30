@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./tic-tac-toe.css" rel="stylesheet"/>
+    <script src="./tic-tac-toe.js" type="text/javascript" ></script>
     <link
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet"
@@ -13,23 +14,23 @@
 </head>
 <body>
     <h1 class="heading">Lets play Tic Tac Toe!</h1>
-    <h3 class="winner-display">Naveen is the Winner</h3>
-    <h4 class="turn-display">Naveen its your turn!</h4>
+    <h3 class="winner-display"></h3>
+    <h4 class="turn-display">Player-X its your turn!</h4>
     <div class="play-area">
-        <div class="play-cells x-cell">X</div>
-        <div class="play-cells o-cell">O</div>
-        <div class="play-cells"></div>
-        <div class="play-cells"></div>
-        <div class="play-cells"></div>
-        <div class="play-cells"></div>
-        <div class="play-cells"></div>
-        <div class="play-cells"></div>
-        <div class="play-cells"></div>
+        <div class="play-cells" onclick="cellClickHandler(0,0,0)"></div>
+        <div class="play-cells" onclick="cellClickHandler(0,1,1)"></div>
+        <div class="play-cells" onclick="cellClickHandler(0,2,2)"></div>
+        <div class="play-cells" onclick="cellClickHandler(1,0,3)"></div>
+        <div class="play-cells" onclick="cellClickHandler(1,1,4)"></div>
+        <div class="play-cells" onclick="cellClickHandler(1,2,5)"></div>
+        <div class="play-cells" onclick="cellClickHandler(2,0,6)"></div>
+        <div class="play-cells" onclick="cellClickHandler(2,1,7)"></div>
+        <div class="play-cells" onclick="cellClickHandler(2,2,8)"></div>
     </div>
     <div class="action-container">
-        <input type="text" class="player-1" placeholder="Player-1" value=""/>
+        <input type="text" class="player-X" placeholder="Player-X" value=""/>
         <button type="button" class="refresh-button scale-animate">Refresh</button>
-        <input type="text" class="player-2" placeholder="Player-2" value=""/>
+        <input type="text" class="player-O" placeholder="Player-O" value=""/>
     </div>
 </body>
 </html>
